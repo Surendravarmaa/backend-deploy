@@ -2,22 +2,6 @@ pipeline {
     agent {
         label 'AGENT-1'
     }
-    options {
-        // Timeout counter starts BEFORE agent is allocated
-        timeout(time: 30, unit: 'MINUTES')
-        disableConcurrentBuilds()
-        ansiColor('xterm')
-    }
-    pipeline {
-    agent {
-        label 'AGENT-1'
-    }
-    options {
-        // Timeout counter starts BEFORE agent is allocated
-        timeout(time: 30, unit: 'MINUTES')
-        disableConcurrentBuilds()
-        ansiColor('xterm')
-    }
     parameters {
         string(name: 'appVersion', defaultValue: '1.0.0', description: 'What is the application version?')
     }
@@ -47,3 +31,4 @@ pipeline {
         }
     }
 }
+
