@@ -2,6 +2,11 @@ pipeline {
     agent {
         label 'AGENT-1'
     }
+    options {
+        timeout(time: 30, unit: 'MINUTES')
+        disableConcurrentBuilds()
+        ansiColor('xterm')
+    }
     parameters {
         string(name: 'appVersion', defaultValue: '1.0.0', description: 'What is the application version?')
     }
